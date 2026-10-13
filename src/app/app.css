@@ -1,0 +1,67 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.employee-grid {
+  display: grid;
+  gap: 20px;
+  /* Mặc định Mobile: 1 cột */
+  grid-template-columns: 1fr;
+}
+
+.employee-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: white;
+  margin-top: 10px;
+}
+.badge.active { background-color: #28a745; }
+.badge.inactive { background-color: #dc3545; }
+
+/* Breakpoint 1: Tablet (>= 600px) -> 2 cột */
+@media (min-width: 600px) {
+  .employee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Breakpoint 2: Laptop (>= 900px) -> 3 cột */
+@media (min-width: 900px) {
+  .employee-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Breakpoint 3: Desktop lớn (>= 1200px) -> 4 cột */
+@media (min-width: 1200px) {
+  .employee-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
