@@ -1,0 +1,42 @@
+/* General Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* 1. Mobile First (1 column) */
+.directory-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+/* 2. Breakpoint 1: Tablet (768px trở lên - 2 columns) */
+@media (min-width: 768px) {
+  .directory-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3. Breakpoint 2: Desktop (1024px trở lên - 3 hoặc 4 columns) */
+@media (min-width: 1024px) {
+  .directory-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
